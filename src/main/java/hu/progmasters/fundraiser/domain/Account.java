@@ -41,9 +41,9 @@ public class Account {
     public Account() {
     }
 
-    public Account(AccountFormCommand accountFormCommand) {
+    public Account(AccountFormCommand accountFormCommand, String ipAddress) {
         this.username = accountFormCommand.getUsername();
-        this.ipAddress = accountFormCommand.getIpAddress();
+        this.ipAddress = ipAddress;
         this.goal = accountFormCommand.getGoal();
         this.balance = 5000;
         this.funds = 0;
@@ -63,14 +63,6 @@ public class Account {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public String getIpAddress() {
-        return ipAddress;
-    }
-
-    public void setIpAddress(String ipAddress) {
-        this.ipAddress = ipAddress;
     }
 
     public String getGoal() {

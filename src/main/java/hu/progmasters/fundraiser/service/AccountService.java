@@ -20,7 +20,7 @@ public class AccountService {
     }
 
 
-    public void create(AccountFormCommand accountFormCommand) {
-        accountRepository.save(new Account(accountFormCommand));
+    public void create(AccountFormCommand accountFormCommand, String ipAddress) {
+        accountRepository.save(new Account(accountFormCommand, ipAddress));
     }
 }
