@@ -1,5 +1,7 @@
 package hu.progmasters.fundraiser.dto;
 
+import javax.validation.constraints.Size;
+
 public class AccountFormCommand {
 
     private String username;

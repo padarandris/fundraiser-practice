@@ -18,8 +18,14 @@ public class AccountValidator implements Validator {
         if (accountFormCommand.getUsername().isEmpty()){
             errors.rejectValue("username","username.isempty");
         }
+        if (accountFormCommand.getUsername().length() < 4 || accountFormCommand.getUsername().length() > 30){
+            errors.rejectValue("username","username.size.bad");
+        }
         if (accountFormCommand.getGoal().isEmpty()){
             errors.rejectValue("goal","goal.isempty");
+        }
+        if (accountFormCommand.getGoal().length() < 5 || accountFormCommand.getGoal().length() > 100){
+            errors.rejectValue("goal","goal.size.bad");
         }
 
     }
