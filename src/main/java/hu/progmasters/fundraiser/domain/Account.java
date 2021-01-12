@@ -1,5 +1,7 @@
 package hu.progmasters.fundraiser.domain;
 
+import hu.progmasters.fundraiser.dto.AccountFormCommand;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -39,10 +41,10 @@ public class Account {
     public Account() {
     }
 
-    public Account(String username, String ipAddress, String goal) {
-        this.username = username;
-        this.ipAddress = ipAddress;
-        this.goal = goal;
+    public Account(AccountFormCommand accountFormCommand) {
+        this.username = accountFormCommand.getUsername();
+        this.ipAddress = accountFormCommand.getIpAddress();
+        this.goal = accountFormCommand.getGoal();
         this.balance = 5000;
         this.funds = 0;
     }
