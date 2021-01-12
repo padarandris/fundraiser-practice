@@ -30,7 +30,8 @@ public class TransferService {
         Transfer transfer = null;
         if (sender.isPresent() && receiver.isPresent()) {
             transfer = new Transfer(sender.get(), receiver.get(), transferFormCommand.getAmount());
-            sender.get().setFunds(sender.get().getFunds() - transferFormCommand.getAmount());
+            sender.get().setBalance(sender.get().getBalance() - transferFormCommand.getAmount());
+            receiver.get().setFunds(receiver.get().getFunds() + transferFormCommand.getAmount());
             transferRepository.save(transfer);
         }
         return transfer;
